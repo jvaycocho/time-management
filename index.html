@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Task Board</h1>
+            <!-- Search input to filter tasks -->
+            <input type="search" id="taskSearchInput" placeholder="Search tasks..." oninput="searchTasks()" />
+        </header>
+        
+        <!-- Calendar Section -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prevMonth" onclick="changeMonth(-1)">&#10094;</button>
+                <h3 id="calendarMonthYear"></h3>
+                <button id="nextMonth" onclick="changeMonth(1)">&#10095;</button>
+            </div>
+            <div class="calendar" id="calendar"></div>
+        </div>
+
+        <!-- Task Lists -->
+        <div class="task-board">
+            <div class="task-list" id="pending">
+                <h3>Pending</h3>
+                <div class="add-task-container">
+                    <input type="text" id="newTaskInput" placeholder="Task Description..." />
+                    <select id="newTaskPriority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <button class="add-task" onclick="addTask()">Add Task</button>
+                </div>
+                <ul id="pending-tasks"></ul>
+            </div>
+
+            <div class="task-list" id="in-progress">
+                <h3>In Progress</h3>
+                <ul id="in-progress-tasks"></ul>
+            </div>
+
+            <div class="task-list" id="done">
+                <h3>Done</h3>
+                <ul id="done-tasks"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body> 
+</html>
